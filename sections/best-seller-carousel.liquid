@@ -1,0 +1,255 @@
+<section class="bg-background relative">
+    <!-- Decorative botanical elements -->
+    <div class="absolute top-2 left-0 hidden md:block">
+        {% render 'icon-right-leaf' %}
+    </div>
+    <div class="absolute top-4 right-0 hidden md:block">
+        {% render 'icon-left-leaf' %}
+    </div>
+    
+    <div class="px-12 lg:px-20 py-24 2xl:px-0 mx-auto max-w-screen-2xl w-full">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <p class="text-small font-roboto tracking-wider uppercase text-soft-gray mb-6">
+                {{ section.settings.kicker | upcase }}
+            </p>
+            <h2 class="text-5xl lg:text-6xl xl:text-7xl 2xl:text-title font-roseritta 2xl:leading-[70px] text-dark-gray">
+                {{ section.settings.title | escape | newline_to_br | upcase }}
+            </h2>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            <!-- Navigation Arrows -->
+            <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-12 h-12 flex items-center justify-centerz-10">
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.397603 9.99984L8.07979 18L10 16.0003L3.27791 9L10 1.99969L8.07979 0L0.397603 8.00016C0.143018 8.26536 -3.6666e-08 8.625 -3.6666e-08 9C-3.6666e-08 9.375 0.143018 9.73464 0.397603 9.99984Z" fill="#333333"/>
+                </svg>
+            </button>
+            <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-12 h-12 flex items-center justify-center z-10">
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.6024 9.99984L1.92021 18L0 16.0003L6.72209 9L0 1.99969L1.92021 0L9.6024 8.00016C9.85698 8.26536 10 8.625 10 9C10 9.375 9.85698 9.73464 9.6024 9.99984Z" fill="#333333"/>
+                </svg>
+            </button>
+
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <div class="absolute top-4 left-4 bg-[#ffffff33] px-5 py-1.5 rounded">
+                       <span class="text-white font-roboto text-save-tag font-bold">SAVE 10%</span>
+                    </div>
+                    {% if section.settings.image_1 %}
+                        {{ section.settings.image_1 | image_url: width: 1800 | image_tag:
+                            loading: 'lazy',
+                            alt: 'Steeped Rose Kitchen Trio homecare products with decorative roses',
+                            class: 'aspect-[0.7] object-cover rounded-lg shadow-sm'
+                        }}
+                    {% else %}
+                        <div class="aspect-[0.7] object-cover rounded-lg shadow-sm"></div>
+                    {% endif %}
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <button class="w-full bg-white text-black text-small py-4 font-bold tracking-wide hover:bg-gray-100 transition-colors">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+                <!-- Product Info -->
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-end border-b mb-5 pb-5 border-[#DDDDDD]">
+                        <h3 class="text-[20px] font-medium font-itc text-dark-gray">Steeped Rose<br>Kitchen Trio</h3>
+                        <span class="text-small font-medium font-roboto text-soft-gray">$115</span>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="flex items-center gap-4">
+                        <div class="flex text-yellow-star">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <span class="text-save-tag text-light-gray">43 reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <div class="absolute top-4 left-4 bg-[#ffffff33] px-5 py-1.5 rounded">
+                       <span class="text-white font-roboto text-save-tag font-bold">SAVE 10%</span>
+                    </div>
+                    {% if section.settings.image_2 %}
+                        {{ section.settings.image_2 | image_url: width: 1800 | image_tag:
+                            loading: 'lazy',
+                            alt: 'Citrus-themed homecare products with natural elements',
+                            class: 'aspect-[0.7] object-cover rounded-lg shadow-sm'
+                        }}
+                    {% else %}
+                        <div class="aspect-[0.7] object-cover rounded-lg shadow-sm"></div>
+                    {% endif %}
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <button class="w-full bg-white text-black text-small py-4 font-bold tracking-wide hover:bg-gray-100 transition-colors">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-end border-b mb-5 pb-5 border-[#DDDDDD]">
+                        <h3 class="text-[20px] font-medium font-itc text-dark-gray">Steeped Rose<br>Kitchen Trio</h3>
+                        <span class="text-small font-medium font-roboto text-soft-gray">$115</span>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="flex items-center gap-4">
+                        <div class="flex text-yellow-star">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <span class="text-save-tag text-light-gray">43 reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <div class="absolute top-4 left-4 bg-[#ffffff33] px-5 py-1.5 rounded">
+                       <span class="text-white font-roboto text-save-tag font-bold">SAVE 10%</span>
+                    </div>
+                    {% if section.settings.image_2 %}
+                        {{ section.settings.image_2 | image_url: width: 1800 | image_tag:
+                            loading: 'lazy',
+                            alt: 'Green-themed homecare products with natural plant elements',
+                            class: 'aspect-[0.7] object-cover rounded-lg shadow-sm'
+                        }}
+                    {% else %}
+                        <div class="aspect-[0.7] object-cover rounded-lg shadow-sm"></div>
+                    {% endif %}
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <button class="w-full bg-white text-black text-small py-4 font-bold tracking-wide hover:bg-gray-100 transition-colors">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-end border-b mb-5 pb-5 border-[#DDDDDD]">
+                        <h3 class="text-[20px] font-medium font-itc text-dark-gray">Steeped Rose<br>Kitchen Trio</h3>
+                        <span class="text-small font-medium font-roboto text-soft-gray">$115</span>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="flex items-center gap-4">
+                        <div class="flex text-yellow-star">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <span class="text-save-tag text-light-gray">43 reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div class="relative">
+                    <div class="absolute top-4 left-4 bg-[#ffffff33] px-5 py-1.5 rounded">
+                       <span class="text-white font-roboto text-save-tag font-bold">SAVE 10%</span>
+                    </div>
+                    {% if section.settings.image_4 %}
+                        {{ section.settings.image_4 | image_url: width: 1800 | image_tag:
+                            loading: 'lazy',
+                            alt: 'Red-themed homecare products with natural plant elements',
+                            class: 'aspect-[0.7] object-cover rounded-lg shadow-sm'
+                        }}
+                    {% else %}
+                        <div class="aspect-[0.7] object-cover rounded-lg shadow-sm"></div>
+                    {% endif %}
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <button class="w-full bg-white text-black text-small py-4 font-bold tracking-wide hover:bg-gray-100 transition-colors">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between items-end border-b mb-5 pb-5 border-[#DDDDDD]">
+                        <h3 class="text-[20px] font-medium font-itc text-dark-gray">Steeped Rose<br>Kitchen Trio</h3>
+                        <span class="text-small font-medium font-roboto text-soft-gray">$115</span>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="flex items-center gap-4">
+                        <div class="flex text-yellow-star">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <span class="text-save-tag text-light-gray">43 reviews</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Best Seller Carousel",
+  "settings": [
+
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Best-Selling Sets" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "Discover our best-selling\nsets for home and body." },
+
+    { "type": "image_picker", "id": "image_1", "label": "Card 1 Image" },
+    { "type": "image_picker", "id": "image_2", "label": "Card 2 Image" },
+    { "type": "image_picker", "id": "image_3", "label": "Card 3 Image" },
+    { "type": "image_picker", "id": "image_4", "label": "Card 4 Image" },
+
+  ],
+  "presets": [{ "name": "Best Seller Carousel" }]
+}
+{% endschema %}

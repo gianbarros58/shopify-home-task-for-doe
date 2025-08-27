@@ -1,0 +1,188 @@
+<section class="bg-dark-brown text-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0">
+            {% if section.settings.image %}
+                {{ section.settings.image | image_url: width: 1800 | image_tag:
+                    loading: 'lazy',
+                    class: 'w-full h-full md:max-h-[800px] object-cover'
+                }}
+            {% else %}
+                <div class="aspect-[4/3] w-full h-full bg-neutral-200"></div>
+            {% endif %}
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 px-12 lg:px-20 py-24 2xl:px-0 mx-auto max-w-screen-2xl w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <p class="text-[15px] font-light tracking-wider uppercase text-gray-300 font-roboto">
+                            {{ section.settings.kicker | upcase }}
+                        </p>
+                        <h1 class="text-5xl md:text-7xl xl:text-8xl 2xl:text-[80px] font-roseritta leading-tight">
+                            {{ section.settings.title | escape | newline_to_br | upcase }}
+                        </h1>
+                        <p class="text-small md:text-small leading-relaxed max-w-[585px] font-roboto">
+                            {{ section.settings.subtext }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Content - Contact Form -->
+                <div class="bg-[#F8F7F2] text-soft-gray p-8 lg:p-14 rounded-lg lg:-mr-24 pr-24">
+                    <form class="space-y-6">
+                        <!-- Name Fields -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                    FIRST NAME*
+                                </label>
+                                <input 
+                                    type="text" 
+                                    placeholder="Enter your first name"
+                                    class="w-full px-0 py-3 border-0 border-b border-light-gray bg-transparent text-dark-gray placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                    LAST NAME*
+                                </label>
+                                <input 
+                                    type="text" 
+                                    placeholder="Enter your first name"
+                                    class="w-full px-0 py-3 border-0 border-b border-light-gray bg-transparent text-dark-gray placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Company and Email -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                    COMPANY NAME*
+                                </label>
+                                <input 
+                                    type="text" 
+                                    placeholder="Enter company name"
+                                    class="w-full px-0 py-3 border-0 border-b border-light-gray bg-transparent text-dark-gray placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                    EMAIL ADDRESS*
+                                </label>
+                                <input 
+                                    type="email" 
+                                    placeholder="Enter your email address"
+                                    class="w-full px-0 py-3 border-0 border-b border-light-gray bg-transparent text-dark-gray placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Phone and Product Type -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                    PHONE NUMBER*
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    placeholder="Enter your phone number"
+                                    class="w-full px-0 py-3 border-0 border-b border-light-gray bg-transparent text-dark-gray placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                    PRODUCT TYPE*
+                                </label>
+                                <select class="w-full px-0 py-3 border-0 border-b border-light-gray bg-transparent text-dark-gray focus:border-black focus:outline-none transition-colors appearance-none">
+                                    <option value="">Please select</option>
+                                    <option value="kitchen">Kitchen Sets</option>
+                                    <option value="bathroom">Bathroom Sets</option>
+                                    <option value="custom">Custom Sets</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Window -->
+                        <div class="space-y-4">
+                            <h3 class="text-small font-medium text-light-gray font-roboto uppercase tracking-wide">
+                                DELIVERY WINDOW
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                        EARLIEST DATE *
+                                    </label>
+                                    <div class="relative">
+                                        <input 
+                                            type="date" 
+                                            placeholder="mm / dd / yyyy"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-300 bg-transparent text-black placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                        />
+                                        <svg class="absolute right-0 top-3 w-5 h-5 text-soft-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                        LATEST DATE *
+                                    </label>
+                                    <div class="relative">
+                                        <input 
+                                            type="date" 
+                                            placeholder="mm / dd / yyyy"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-300 bg-transparent text-black placeholder-soft-gray focus:border-black focus:outline-none transition-colors"
+                                        />
+                                        <svg class="absolute right-0 top-3 w-5 h-5 text-soft-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Notes -->
+                        <div class="space-y-2">
+                            <label class="text-[16px] font-bold text-soft-gray uppercase tracking-wide">
+                                ADDITIONAL NOTES (TELL US MORE ABOUT WHAT YOU ARE LOOKING FOR)
+                            </label>
+                            <textarea 
+                                rows="3"
+                                placeholder="Enter your message here"
+                                class="w-full px-0 py-3 border-0 border-b border-gray-300 bg-transparent text-black placeholder-soft-gray focus:border-black focus:outline-none transition-colors resize-none"
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-6">
+                            <button 
+                                type="submit"
+                                class="bg-forest-green text-white text-small px-16 py-4 font-medium tracking-wide hover:bg-opacity-90 transition-colors w-full md:w-auto"
+                            >
+                                INQUIRE NOW
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% schema %}
+{
+  "name": "Get In Touch",
+  "settings": [
+
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "GET IN TOUCH" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "LET'S MAKE IT\nPERSONAL" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Whether you're thanking clients, welcoming new hires, or celebrating milestones, our curated gift sets offer a refined blend of beauty, fragrance, and function—crafted to elevate every space they touch." },
+
+  ],
+  "presets": [{ "name": "Get In Touch" }]
+}
+{% endschema %}

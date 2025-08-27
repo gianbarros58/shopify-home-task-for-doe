@@ -1,0 +1,137 @@
+<section class="py-16 lg:py-24 bg-background">
+    <div class="max-w-screen-2xl mx-auto px-12 lg:px-20 2xl:px-0">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="relative">
+                {% if section.settings.image %}
+                    {{ section.settings.image | image_url: width: 1800 | image_tag:
+                        loading: 'lazy',
+                        alt: "Luxury homecare products arranged with dried flowers and natural elements",
+                        class: "w-full lg:h-[812px] object-cover rounded-lg shadow-lg"
+                    }}
+                {% else %}
+                    <div class="w-full lg:h-[812px] object-cover rounded-lg shadow-lg"></div>
+                {% endif %}
+            </div>
+
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <p class="text-small font-light font-roboto tracking-wider uppercase text-soft-gray">
+                        {{ section.settings.kicker | upcase }}
+                    </p>
+                    <h2 class="text-5xl lg:text-6xl xl:text-7xl 2xl:text-title font-roseritta 2xl:leading-[70px] text-dark-gray">
+                        {{ section.settings.title | escape | newline_to_br | upcase }}
+                    </h2>
+                    <p class="text-small text-[#555555] leading-[22px] font-roboto">
+                        {{ section.settings.subtext }}
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 pt-[5px]">
+                            <svg width="25" height="97" viewBox="0 0 25 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.27051 8.70898C8.27051 10.4785 7.94824 11.832 7.30371 12.7695C6.66504 13.707 5.75098 14.1758 4.56152 14.1758C3.38379 14.1758 2.47266 13.7217 1.82812 12.8135C1.18945 11.8994 0.858398 10.5928 0.834961 8.89355V6.47656C0.834961 4.71289 1.1543 3.36523 1.79297 2.43359C2.43164 1.49609 3.34863 1.02734 4.54395 1.02734C5.73926 1.02734 6.65625 1.49023 7.29492 2.41602C7.93359 3.3418 8.25879 4.66309 8.27051 6.37988V8.70898ZM5.77441 6.11621C5.77441 5.1084 5.6748 4.35254 5.47559 3.84863C5.27637 3.34473 4.96582 3.09277 4.54395 3.09277C3.75293 3.09277 3.34277 4.01562 3.31348 5.86133V9.05176C3.31348 10.083 3.41309 10.8506 3.6123 11.3545C3.81738 11.8584 4.13379 12.1104 4.56152 12.1104C4.96582 12.1104 5.26465 11.876 5.45801 11.4072C5.65723 10.9326 5.7627 10.209 5.77441 9.23633V6.11621ZM15.416 14H12.9199V4.22656L10.4854 5.16699V3.09277L15.1523 1.18555H15.416V14Z" fill="#2A4835"/>
+                                <path d="M9 31L9 96" stroke="#2A4835" stroke-width="0.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-description font-itc font-bold text-soft-gray leading-[22px] mb-[16px]">{{ section.settings.step_one_heading }}</h3>
+                            <p class="text-[#555555] font-roboto text-small leading-[23px]">
+                                {{ section.settings.step_one_description }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 pt-[5px]">
+                            <svg width="25" height="76" viewBox="0 0 25 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.27051 8.70898C8.27051 10.4785 7.94824 11.832 7.30371 12.7695C6.66504 13.707 5.75098 14.1758 4.56152 14.1758C3.38379 14.1758 2.47266 13.7217 1.82812 12.8135C1.18945 11.8994 0.858398 10.5928 0.834961 8.89355V6.47656C0.834961 4.71289 1.1543 3.36523 1.79297 2.43359C2.43164 1.49609 3.34863 1.02734 4.54395 1.02734C5.73926 1.02734 6.65625 1.49023 7.29492 2.41602C7.93359 3.3418 8.25879 4.66309 8.27051 6.37988V8.70898ZM5.77441 6.11621C5.77441 5.1084 5.6748 4.35254 5.47559 3.84863C5.27637 3.34473 4.96582 3.09277 4.54395 3.09277C3.75293 3.09277 3.34277 4.01562 3.31348 5.86133V9.05176C3.31348 10.083 3.41309 10.8506 3.6123 11.3545C3.81738 11.8584 4.13379 12.1104 4.56152 12.1104C4.96582 12.1104 5.26465 11.876 5.45801 11.4072C5.65723 10.9326 5.7627 10.209 5.77441 9.23633V6.11621ZM17.4814 14H9.94043V12.2422L13.4033 7.83887C13.8428 7.22949 14.165 6.69629 14.3701 6.23926C14.5811 5.77637 14.6865 5.33398 14.6865 4.91211C14.6865 4.34375 14.5869 3.89844 14.3877 3.57617C14.1943 3.25391 13.9131 3.09277 13.5439 3.09277C13.1396 3.09277 12.8174 3.28027 12.5771 3.65527C12.3428 4.03027 12.2256 4.55762 12.2256 5.2373H9.72949C9.72949 4.45215 9.89062 3.73438 10.2129 3.08398C10.541 2.43359 10.998 1.92969 11.584 1.57227C12.1758 1.20898 12.8438 1.02734 13.5879 1.02734C14.7305 1.02734 15.6152 1.34375 16.2422 1.97656C16.875 2.60352 17.1914 3.49707 17.1914 4.65723C17.1914 5.37793 17.0156 6.11035 16.6641 6.85449C16.3184 7.59277 15.6885 8.50391 14.7744 9.58789L13.1309 11.9346H17.4814V14Z" fill="#2A4835"/>
+                                <path d="M9 31L9 75" stroke="#2A4835" stroke-width="0.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-description font-itc font-bold text-soft-gray leading-[22px] mb-[16px]">{{ section.settings.step_two_heading }}</h3>
+                            <p class="text-[#555555] font-roboto text-small leading-[23px]">
+                                {{ section.settings.step_two_description }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 pt-[5px]">
+                            <svg width="25" height="97" viewBox="0 0 25 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.27051 8.70898C8.27051 10.4785 7.94824 11.832 7.30371 12.7695C6.66504 13.707 5.75098 14.1758 4.56152 14.1758C3.38379 14.1758 2.47266 13.7217 1.82812 12.8135C1.18945 11.8994 0.858398 10.5928 0.834961 8.89355V6.47656C0.834961 4.71289 1.1543 3.36523 1.79297 2.43359C2.43164 1.49609 3.34863 1.02734 4.54395 1.02734C5.73926 1.02734 6.65625 1.49023 7.29492 2.41602C7.93359 3.3418 8.25879 4.66309 8.27051 6.37988V8.70898ZM5.77441 6.11621C5.77441 5.1084 5.6748 4.35254 5.47559 3.84863C5.27637 3.34473 4.96582 3.09277 4.54395 3.09277C3.75293 3.09277 3.34277 4.01562 3.31348 5.86133V9.05176C3.31348 10.083 3.41309 10.8506 3.6123 11.3545C3.81738 11.8584 4.13379 12.1104 4.56152 12.1104C4.96582 12.1104 5.26465 11.876 5.45801 11.4072C5.65723 10.9326 5.7627 10.209 5.77441 9.23633V6.11621ZM12.1553 6.46777H13.3594C13.8164 6.46777 14.1504 6.30957 14.3613 5.99316C14.5781 5.6709 14.6865 5.24316 14.6865 4.70996C14.6865 4.2002 14.5752 3.80469 14.3525 3.52344C14.1357 3.23633 13.8428 3.09277 13.4736 3.09277C13.1279 3.09277 12.8438 3.22754 12.6211 3.49707C12.4043 3.7666 12.2959 4.10645 12.2959 4.5166H9.80859C9.80859 3.84863 9.96094 3.25098 10.2656 2.72363C10.5762 2.19043 11.0068 1.77441 11.5576 1.47559C12.1143 1.17676 12.7295 1.02734 13.4033 1.02734C14.5811 1.02734 15.5039 1.35254 16.1719 2.00293C16.8398 2.65332 17.1738 3.54395 17.1738 4.6748C17.1738 5.25488 17.0215 5.79395 16.7168 6.29199C16.418 6.78418 16.0225 7.16211 15.5303 7.42578C16.1338 7.68359 16.582 8.07031 16.875 8.58594C17.1738 9.10156 17.3232 9.71094 17.3232 10.4141C17.3232 11.5508 16.96 12.4619 16.2334 13.1475C15.5127 13.833 14.5635 14.1758 13.3857 14.1758C12.29 14.1758 11.3994 13.8389 10.7139 13.165C10.0342 12.4854 9.69434 11.5947 9.69434 10.4932H12.1816C12.1816 10.9502 12.3018 11.334 12.542 11.6445C12.7822 11.9551 13.0869 12.1104 13.4561 12.1104C13.8838 12.1104 14.2207 11.9521 14.4668 11.6357C14.7188 11.3193 14.8447 10.8975 14.8447 10.3701C14.8447 9.11035 14.3555 8.47754 13.377 8.47168H12.1553V6.46777Z" fill="#2A4835"/>
+                                <path d="M9 31L9 96" stroke="#2A4835" stroke-width="0.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-description font-itc font-bold text-soft-gray leading-[22px] mb-[16px]">{{ section.settings.step_three_heading }}</h3>
+                            <p class="text-[#555555] font-roboto text-small leading-[23px]">
+                                {{ section.settings.step_three_description }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 pt-[5px]">
+                            <svg width="19" height="81" viewBox="0 0 19 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 33L10 80" stroke="#2A4835" stroke-width="0.5" stroke-linecap="round"/>
+                                <g clip-path="url(#clip0_1_86)">
+                                <path d="M14.2657 0.986219C13.6298 0.350238 12.7842 0 11.8848 0C10.9854 0 10.1399 0.350238 9.5039 0.986219L9.5 0.990078L9.49614 0.986219C8.86016 0.350238 8.01462 0 7.1152 0C6.21578 0 5.37025 0.350238 4.73427 0.986219C4.09829 1.6222 3.74805 2.46777 3.74805 3.36716C3.74805 4.26654 4.09829 5.11211 4.73427 5.74809L9.10638 10.1202C9.32377 10.3376 9.67619 10.3376 9.89358 10.1202L14.2657 5.74809C14.9017 5.11211 15.252 4.26654 15.252 3.36716C15.252 2.46777 14.9017 1.6222 14.2657 0.986219Z" fill="#2A4835"/>
+                                <path d="M4.91856 14.6164C4.70118 14.3991 4.70118 14.0466 4.91856 13.8292C5.13591 13.6119 5.48838 13.6119 5.70576 13.8292L10.1515 18.2749C10.2893 17.8857 10.4818 17.2208 10.538 16.4198C10.6576 14.7183 10.1088 13.2071 8.95124 12.0494L8.94634 12.0445L8.94133 12.0398C7.64859 10.8098 6.37763 10.2861 5.25629 9.82417C4.01955 9.31462 2.95154 8.87451 1.98644 7.60455L1.9864 7.60451C1.74066 7.28114 1.24254 7.32133 1.05184 7.67988L1.0518 7.67996C1.02315 7.73376 0.347801 9.01845 0.114717 10.7596C-0.200231 13.1127 0.447254 15.1704 1.98718 16.7103C4.35105 19.0741 8.22668 19.0414 9.28589 18.9838L4.91856 14.6164Z" fill="#2A4835"/>
+                                <path d="M18.8853 10.7595C18.6523 9.01833 17.9769 7.73364 17.9482 7.67983L17.9482 7.67976C17.7575 7.32121 17.2593 7.28102 17.0136 7.60439L17.0136 7.60443C16.0485 8.87442 14.9805 9.31454 13.7438 9.82405C12.6817 10.2616 11.4854 10.7549 10.2635 11.8509C11.09 12.8918 11.5604 14.1206 11.6511 15.4723L13.2943 13.8291C13.5116 13.6117 13.8641 13.6117 14.0815 13.8291C14.2989 14.0465 14.2989 14.3989 14.0815 14.6163L11.5803 17.1175C11.4464 18.0131 11.1926 18.6935 11.073 18.9798C12.7254 18.8895 15.2768 18.4462 17.0129 16.7101C18.5528 15.1703 19.2003 13.1126 18.8853 10.7595Z" fill="#2A4835"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_86">
+                                <rect width="19" height="19" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-description font-itc font-bold text-soft-gray leading-[22px] mb-[16px]">{{ section.settings.step_four_heading }}</h3>
+                            <p class="text-[#555555] font-roboto text-small leading-[23px]">
+                                {{ section.settings.step_four_description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="{{ section.settings.primary_url }}">
+                        <button class="bg-[#2A4835] text-white font-bold px-20 py-6 tracking-wide hover:bg-opacity-90 transition-colors">
+                            {{ section.settings.primary_label }}
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Gift Steps",
+  "settings": [
+
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "HOW IT WORKS" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "MORE THAN A GIFT.\nIT'S A GESTURE." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Leave a lasting impression with homecare gifts that speak volumes-crafted with intention, clean formulations, and custom fragrance blends." },
+
+    { "type": "text", "id": "step_one_heading", "label": "Step 1 Heading", "default": "Choose Your Gift Set" },
+    { "type": "textarea", "id": "step_one_description", "label": "Step 1 Description", "default": "Select from our curated bundles or build a custom assortment-perfect for clients, new hires, or team celebrations. Each set is thoughtfully composed with our most loved luxury homecare products." },
+    { "type": "text", "id": "step_two_heading", "label": "Step 2 Heading", "default": "Add Your Personal Touch" },
+    { "type": "textarea", "id": "step_two_description", "label": "Step 2 Description", "default": "Include a note, custom ribbon, or branded card. Every detail can be tailored to reflect your company's voice and values." },
+    { "type": "text", "id": "step_three_heading", "label": "Step 3 Heading", "default": "Gifts That Arrive Ready to Impress" },
+    { "type": "textarea", "id": "step_three_description", "label": "Step 3 Description", "default": "Each order is hand-packed with care, beautifully boxed, and shipped directly to your recipients. No extra wrapping needed-just a perfect unboxing experience, every time." },
+    { "type": "text", "id": "step_four_heading", "label": "Step 4 Heading", "default": "Cleaner Gifting for a Cleaner Planet" },
+    { "type": "textarea", "id": "step_four_description", "label": "Step 4 Description", "default": "Every product is made with non-toxic, vegan, and cruelty-free ingredients-formulated with organic fragrance oils and consciously packaged." },
+
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "INQUIRE NOW" },
+    { "type": "url",  "id": "primary_url",   "label": "Primary button link" },
+  ],
+  "presets": [{ "name": "Home Gift Steps" }]
+}
+{% endschema %}

@@ -1,0 +1,121 @@
+<section class="py-16 lg:py-24 bg-background">
+    <div class="max-w-screen-2xl mx-auto px-12 lg:px-20 2xl:px-0">
+        <!-- Header -->
+        <div class="text-left mb-16">
+            <p class="text-small font-roboto tracking-wider uppercase text-soft-gray mb-6">
+                {{ section.settings.kicker | upcase }}
+            </p>
+            <h2 class="text-5xl lg:text-6xl xl:text-7xl 2xl:text-title font-roseritta 2xl:leading-[70px] text-dark-gray">
+                {{ section.settings.title | upcase }}
+            </h2>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- Card 1: Signature Fragrance Experience -->
+            <div class="space-y-6">
+                {% if section.settings.image_1 %}
+                    {{ section.settings.image_1 | image_url: width: 1800 | image_tag:
+                        loading: 'lazy',
+                        alt: 'Beautiful flowers representing signature fragrance experience',
+                        class: 'aspect-[0.9] object-cover rounded-lg shadow-sm'
+                    }}
+                {% else %}
+                    <div class="aspect-[0.9] object-cover rounded-lg shadow-sm"></div>
+                {% endif %}
+                <div class="space-y-4">
+                    <h3 class="text-description font-itc font-bold text-dark-gray leading-[27px]">{{ section.settings.card_one_heading }}</h3>
+                    <p class="text-light-gray text-small font-roboto leading-[22px] mt-[21px]">
+                        {{ section.settings.card_one_description }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Clean & Conscious -->
+            <div class="space-y-6">
+                {% if section.settings.image_2 %}
+                    {{ section.settings.image_2 | image_url: width: 1800 | image_tag:
+                        loading: 'lazy',
+                        alt: 'Natural landscape representing clean and conscious products',
+                        class: 'aspect-[0.9] object-cover rounded-lg shadow-sm'
+                    }}
+                {% else %}
+                    <div class="aspect-[0.9] object-cover rounded-lg shadow-sm"></div>
+                {% endif %}
+                <div class="space-y-4">
+                    <h3 class="text-description font-itc font-bold text-dark-gray leading-[27px]">{{ section.settings.card_two_heading }}</h3>
+                    <p class="text-light-gray text-small font-roboto leading-[22px] mt-[21px]">
+                        {{ section.settings.card_two_description }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Premium Formulations -->
+            <div class="space-y-6">
+                {% if section.settings.image_3 %}
+                    {{ section.settings.image_3 | image_url: width: 1800 | image_tag:
+                        loading: 'lazy',
+                        alt: 'Premium homecare product formulations with natural elements',
+                        class: 'aspect-[0.9] object-cover rounded-lg shadow-sm'
+                    }}
+                {% else %}
+                    <div class="aspect-[0.9] object-cover rounded-lg shadow-sm"></div>
+                {% endif %}
+                <div class="space-y-4">
+                    <h3 class="text-description font-itc font-bold text-dark-gray leading-[27px]">{{ section.settings.card_three_heading }}</h3>
+                    <p class="text-light-gray text-small font-roboto leading-[22px] mt-[21px]">
+                        {{ section.settings.card_three_description }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4: Quality at the Core -->
+            <div class="space-y-6">
+                {% if section.settings.image_4 %}
+                    {{ section.settings.image_4 | image_url: width: 1800 | image_tag:
+                        loading: 'lazy',
+                        alt: 'Quality candle representing core values and craftsmanship',
+                        class: 'aspect-[0.9] object-cover rounded-lg shadow-sm'
+                    }}
+                {% else %}
+                    <div class="aspect-[0.9] object-cover rounded-lg shadow-sm"></div>
+                {% endif %}
+                <div class="space-y-4">
+                    <h3 class="text-description font-itc font-bold text-dark-gray leading-[27px]">{{ section.settings.card_four_heading }}</h3>
+                    <p class="text-light-gray text-small font-roboto leading-[22px] mt-[21px]">
+                        {{ section.settings.card_four_description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Home Faq Gallery",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "WHY CHOOSE HOMECOUR" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "ELEVATING\nEVERYDAY ROUTINES" },
+
+    { "type": "image_picker", "id": "image_1", "label": "Card 1 Image" },
+    { "type": "text", "id": "card_one_heading", "label": "card 1 Heading", "default": "Signature Fragrance Experience" },
+    { "type": "textarea", "id": "card_one_description", "label": "card 1 Description", "default": "World-renowned perfumers, our scents elevate daily rituals into sensory moments." },
+    
+    { "type": "image_picker", "id": "image_2", "label": "Card 2 Image" },
+    { "type": "text", "id": "card_two_heading", "label": "card 2 Heading", "default": "Clean & Conscious" },
+    { "type": "textarea", "id": "card_two_description", "label": "card 2 Description", "default": "Non-toxic, vegan, cruelty-free, and packaged with sustainability in mind." },
+    
+    { "type": "image_picker", "id": "image_3", "label": "Card 3 Image" },
+    { "type": "text", "id": "card_three_heading", "label": "card 3 Heading", "default": "Premium Formulations" },
+    { "type": "textarea", "id": "card_three_description", "label": "card 3 Description", "default": "From our surface cleaner to hand cream, each product is powered by organic ingredients." },
+    
+    { "type": "image_picker", "id": "image_4", "label": "Card 4 Image" },
+    { "type": "text", "id": "card_four_heading", "label": "card 4 Heading", "default": "Quality at the Core" },
+    { "type": "textarea", "id": "card_four_description", "label": "card 4 Description", "default": "Meeting highest standards: organic, non-toxic, made for design-conscious homes." },
+
+  ],
+  "presets": [{ "name": "Home Faq Gallery" }]
+}
+{% endschema %}

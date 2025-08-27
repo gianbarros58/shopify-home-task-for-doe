@@ -1,0 +1,79 @@
+<section class="bg-background">
+    <div class="px-12 lg:px-20 py-24 2xl:px-0 mx-auto max-w-screen-2xl w-full">
+        <div class="grid lg:flex flex-wrap lg:flex-nowrap gap-12 lg:gap-16 items-center">
+            <!-- Left Content - Image -->
+            <div class="relative flex justify-center">
+                <!-- Founder Image -->
+                {% if section.settings.image %}
+                    {{ section.settings.image | image_url: width: 1800 | image_tag:
+                        loading: 'lazy',
+                        alt: "Luxury homecare products arranged with dried flowers and natural elements",
+                        class: "w-full md:max-w-[500px] lg:h-[500px] object-contain"
+                    }}
+                {% else %}
+                    <div class="w-full lg:h-[500px] object-conatin"></div>
+                {% endif %}
+            </div>
+
+            <!-- Right Content -->
+            <div class="space-y-8 max-w-[780px]">
+                <!-- Quote mark -->
+                <svg class="w-full md:w-auto" width="619" height="35" viewBox="0 0 619 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.9791 0H47.346C48.1352 0 48.7749 0.639679 48.7749 1.42895V19.7958C48.7749 20.5851 48.1352 21.2248 47.346 21.2248H39.5917V33.571C39.5917 34.3599 38.952 35 38.1627 35H33.5707C32.9556 35 32.4097 34.6063 32.2154 34.0228L27.6238 20.2476C27.5751 20.1021 27.5501 19.9495 27.5501 19.7958V1.42895C27.5501 0.639679 28.1898 0 28.9791 0Z" fill="#2A4835"/>
+                    <path d="M1.42904 0H19.7959C20.5852 0 21.2249 0.639679 21.2249 1.42895V19.7958C21.2249 20.5851 20.5852 21.2248 19.7959 21.2248H12.0412V33.571C12.0412 34.3599 11.4016 35 10.6123 35H6.02066C5.40555 35 4.85964 34.6063 4.66502 34.0228L0.0733986 20.2476C0.0250225 20.1021 8.96454e-05 19.9495 8.96454e-05 19.7958V1.42895C8.96454e-05 0.639679 0.639769 0 1.42904 0Z" fill="#2A4835"/>
+                    <line x1="90" y1="13.5" x2="619" y2="13.5" stroke="#DDDDDD"/>
+                </svg>
+                
+                <div class="space-y-6">
+                    <p class="text-small tracking-wider font-roboto uppercase text-light-gray leading-[15px]">
+                        LETTER FROM COURTENEY
+                    </p>
+                    
+                    <blockquote class="text-2xl lg:text-3xl 2xl:text-[30px] font-itc leading-relaxed 2xl:leading-[35px] text-soft-gray italic">
+                        "I wanted to create something that not only works but 
+                        looks beautiful on your counter. Homecourt is about 
+                        elevating everyday routines into something special."
+                    </blockquote>
+                    
+                    <div class="space-y-4 pt-6 relative">
+                        <p class="text-small text-light-gray leading-relaxed max-w-[620px]">
+                            Leave a lasting impression with homecare gifts that speak volumes—crafted with 
+                            intention, clean formulations, and custom fragrance blends. Leave a lasting 
+                            impression with homecare gifts that speak volumes—crafted with intention, clean 
+                            formulations, and custom fragrance blends.
+                        </p>
+                        
+                        <!-- Expand/Collapse Button -->
+                        <button class="absolute bottom-2 right-2 flex items-center gap-2 text-soft-gray hover:text-black transition-colors">
+                            <svg class="w-5 h-5 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Quote mark closing -->
+                    <svg class="w-full md:w-auto" width="778" height="35" viewBox="0 0 778 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M748.796 35H730.429C729.64 35 729 34.3603 729 33.571V15.2042C729 14.4149 729.64 13.7752 730.429 13.7752H738.183V1.42895C738.183 0.640053 738.823 0 739.612 0H744.204C744.819 0 745.365 0.393707 745.559 0.977196L750.151 14.7524C750.2 14.8979 750.225 15.0505 750.225 15.2042V33.571C750.225 34.3603 749.585 35 748.796 35Z" fill="#2A4835"/>
+                        <path d="M776.346 35H757.979C757.19 35 756.55 34.3603 756.55 33.571V15.2042C756.55 14.4149 757.19 13.7752 757.979 13.7752H765.734V1.42895C765.734 0.640053 766.373 0 767.163 0H771.754C772.369 0 772.915 0.393707 773.11 0.977196L777.702 14.7524C777.75 14.8979 777.775 15.0505 777.775 15.2042V33.571C777.775 34.3603 777.135 35 776.346 35Z" fill="#2A4835"/>
+                        <line x1="-4.37114e-08" y1="17.5" x2="691" y2="17.4999" stroke="#DDDDDD"/>
+                    </svg>
+                    
+                    <!-- Author Info -->
+                    <h4 class="!mt-1 text-[20px] font-bold text-soft-gray">COURTENEY COX</h4>
+                    <p class="!mt-3 text-[16px] text-soft-gray">FOUNDER OF THE HOMECOURT</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Homecourt Founder",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Founder Image" },
+  ],
+  "presets": [{ "name": "Homecourt Founder" }]
+}
+{% endschema %}

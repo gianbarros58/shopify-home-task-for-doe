@@ -1,0 +1,258 @@
+<section class="pb-16 lg:pb-24 bg-forest-green text-white relative overflow-hidden">
+    
+    <div class="relative z-10 px-12 lg:px-20 py-24 2xl:px-0 w-full">
+        <div class="absolute inset-0">
+            {% if section.settings.image %}
+                {{ section.settings.image | image_url: width: 1800 | image_tag:
+                    loading: 'lazy',
+                    class: 'w-full h-full max-h-[485px] md:max-h-[750px] object-cover'
+                }}
+            {% else %}
+                <div class="aspect-[4/3] w-full h-full bg-neutral-200"></div>
+            {% endif %}
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center  mx-auto max-w-screen-2xl">
+            <!-- Left Content -->
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <p class="text-small font-light font-roboto tracking-wider uppercase text-white">
+                        {{ section.settings.kicker | upcase }}
+                    </p>
+                    <h2 class="text-5xl lg:text-6xl xl:text-7xl 2xl:text-title font-roseritta 2xl:leading-[70px] text-white">
+                        {{ section.settings.title | escape | newline_to_br | upcase }}
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Right Content - Rating -->
+            <div class="flex flex-col items-end space-y-4 justify-end h-full">
+                <div class="text-right flex items-center">
+                    <div class="text-6xl lg:text-7xl 2xl:text-title font-itc mb-2">5.0</div>
+                    <div class="ml-5">
+                        <div class="flex text-yellow-star mb-2">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-itc 2xl:text-[20px]">STARS OF 3,545 REVIEWS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reviews Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+        <!-- Review Card 1 -->
+        <div class="bg-white text-black p-12 rounded-lg relative">
+            <!-- Quote mark -->
+            <div class="absolute top-12 right-12 text-8xl text-forest-green font-itc">
+                <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.6902 0H28L23.662 25.2394H14.1972L21.6902 0Z" fill="#2A4835"/>
+                    <path d="M7.49296 0H13.8028L9.46479 25.2394H0L7.49296 0Z" fill="#2A4835"/>
+                </svg>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Reviewer Info -->
+                <div class="flex items-center gap-3 !mb-0">
+                    <h4 class="font-[20px] text-black">Genevieve M.</h4>
+                    <div class="flex items-center gap-1 text-[14px] text-light-gray">
+                        <svg class="w-6 h-6 text-forest-green" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        VERIFIED
+                    </div>
+                </div>
+
+                <!-- Star Rating -->
+                <div class="!mt-3 flex text-yellow-400">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                </div>
+
+                <!-- Review Title -->
+                <h3 class="font-itc text-[25px] font-medium">Very Pleased with my purchase!</h3>
+
+                <!-- Review Text -->
+                <p class="text-light-gray text-small leading-[23px]">
+                    I ordered the rose- steeped dishwashing liquid, hand soap, and 
+                    spray bottle with surface cleaner for the kitchen. The products are 
+                    elegant looking, smell great and they lift my spirits each time they 
+                    are used.
+                </p>
+
+                <!-- Footer -->
+                <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                    <span class="text-save-tag text-[#777777]">24.02.2023</span>
+                    <span class="text-save-tag font-medium text-soft-gray">HOMECOURT</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="bg-white text-black p-12 rounded-lg relative">
+            <!-- Quote mark -->
+            <div class="absolute top-12 right-12 text-8xl text-forest-green font-itc">
+                <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.6902 0H28L23.662 25.2394H14.1972L21.6902 0Z" fill="#2A4835"/>
+                    <path d="M7.49296 0H13.8028L9.46479 25.2394H0L7.49296 0Z" fill="#2A4835"/>
+                </svg>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Reviewer Info -->
+                <div class="flex items-center gap-3 !mb-0">
+                    <h4 class="font-[20px] text-black">Genevieve M.</h4>
+                    <div class="flex items-center gap-1 text-[14px] text-light-gray">
+                        <svg class="w-6 h-6 text-forest-green" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        VERIFIED
+                    </div>
+                </div>
+
+                <!-- Star Rating -->
+                <div class="!mt-3 flex text-yellow-400">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                </div>
+
+                <!-- Review Title -->
+                <h3 class="font-itc text-[25px] font-medium">Very Pleased with my purchase!</h3>
+
+                <!-- Review Text -->
+                <p class="text-light-gray text-small leading-[23px]">
+                    I ordered the rose- steeped dishwashing liquid, hand soap, and 
+                    spray bottle with surface cleaner for the kitchen. The products are 
+                    elegant looking, smell great and they lift my spirits each time they 
+                    are used.
+                </p>
+
+                <!-- Footer -->
+                <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                    <span class="text-save-tag text-[#777777]">24.02.2023</span>
+                    <span class="text-save-tag font-medium text-soft-gray">HOMECOURT</span>
+                </div>
+            </div>
+        </div>
+        <!-- Review Card 3 -->
+        <div class="bg-white text-black p-12 rounded-lg relative">
+            <!-- Quote mark -->
+            <div class="absolute top-12 right-12 text-8xl text-forest-green font-itc">
+                <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.6902 0H28L23.662 25.2394H14.1972L21.6902 0Z" fill="#2A4835"/>
+                    <path d="M7.49296 0H13.8028L9.46479 25.2394H0L7.49296 0Z" fill="#2A4835"/>
+                </svg>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Reviewer Info -->
+                <div class="flex items-center gap-3 !mb-0">
+                    <h4 class="font-[20px] text-black">Genevieve M.</h4>
+                    <div class="flex items-center gap-1 text-[14px] text-light-gray">
+                        <svg class="w-6 h-6 text-forest-green" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        VERIFIED
+                    </div>
+                </div>
+
+                <!-- Star Rating -->
+                <div class="!mt-3 flex text-yellow-400">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                </div>
+
+                <!-- Review Title -->
+                <h3 class="font-itc text-[25px] font-medium">Very Pleased with my purchase!</h3>
+
+                <!-- Review Text -->
+                <p class="text-light-gray text-small leading-[23px]">
+                    I ordered the rose- steeped dishwashing liquid, hand soap, and 
+                    spray bottle with surface cleaner for the kitchen. The products are 
+                    elegant looking, smell great and they lift my spirits each time they 
+                    are used.
+                </p>
+
+                <!-- Footer -->
+                <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                    <span class="text-save-tag text-[#777777]">24.02.2023</span>
+                    <span class="text-save-tag font-medium text-soft-gray">HOMECOURT</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- See All Reviews Button -->
+    <div class="text-center mt-12">
+        <button class="bg-white text-forest-green px-11 py-4 font-bold font-roboto tracking-wide hover:bg-gray-100 transition-colors">
+            SEE ALL REVIEWS
+        </button>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Review",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "CUSTOMER REVIEWS" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "SAME JOY,\nDIFFERENT PEOPLE" },
+
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+
+  ],
+  "presets": [{ "name": "Customer Review" }]
+}
+{% endschema %}

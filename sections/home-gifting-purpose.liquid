@@ -1,0 +1,58 @@
+<section class="py-16 lg:py-24 bg-background text-white relative overflow-hidden">
+    <div class="absolute inset-0">
+        {% if section.settings.image %}
+            {{ section.settings.image | image_url: width: 1800 | image_tag:
+                loading: 'lazy',
+                class: 'w-full h-full max-h-[485px] md:max-h-[750px] object-cover'
+            }}
+        {% else %}
+            <div class="aspect-[4/3] w-full h-full bg-neutral-200"></div>
+        {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-12 lg:px-20 py-32 2xl:px-0 mx-auto max-w-screen-2xl w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Left Content -->
+            <div class="space-y-8">
+                <div class="space-y-6 lg:w-[750px] 2xl:w-[850px]">
+                    <p class="text-[15px] font-light tracking-wider uppercase text-gray-300 font-roboto">
+                    {{ section.settings.kicker | upcase }}
+                    </p>
+                    <h1 class="text-5xl md:text-7xl xl:text-8xl 2xl:text-title font-roseritta leading-tight">
+                    {{ section.settings.title | escape | newline_to_br | upcase }}
+                    </h1>
+                    <p class="text-small md:text-small leading-relaxed max-w-[585px] font-roboto">
+                    {{ section.settings.subtext }}
+                    </p>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="pt-4">
+                    <button class="bg-white font-roboto text-black text-small px-16 py-4 font-bold tracking-wide hover:bg-gray-100 transition-colors focus:outline-none focus:ring focus:ring-white/20">
+                        {{  section.settings.primary_label }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Home Gifting Purpose",
+  "settings": [
+
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Gifting with Purpose" },
+    { "type": "textarea", "id": "title", "label": "Title", "default": "Signature GIFTS.\nTimeless Impressions." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Each Homecourt set is more than a gesture, it's a <b>fragrant reflection</b> of your brand's care, crafted with clean ingredients, luxury formulations, and deep intention." },
+
+
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "INQUIRE NOW" },
+    { "type": "url",  "id": "primary_url",   "label": "Primary button link" },
+  ],
+  "presets": [{ "name": "Home Gifting Purpose" }]
+}
+{% endschema %}
